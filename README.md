@@ -1,4 +1,4 @@
-# (Data Visualization and Communication)
+# Data Visualization and Communication
 
 
 ## Overview
