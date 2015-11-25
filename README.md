@@ -34,5 +34,5 @@ possibly: nodemailer.js
 
 ## Wireframes
 
-![list create](img/demo.JPG)
+![list create](img/demo.png)
 
