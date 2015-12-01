@@ -7,8 +7,8 @@ var UserSchema = new mongoose.Schema({ });
 
 var Transaction= new mongoose.Schema({
 	created_at:  Date,
-	gross_sales_money: Number,
-	creator_id: String,	
+	amount: Number,
+	id: String,	
 });
 
 UserSchema.plugin(passportLocalMongoose);
