@@ -1,3 +1,14 @@
+// NOTE: require your mongodb connection
+// as well as your code to bootstrap auth
+require('./db');
+require('./auth');
+// END
+
+//NOTE: we'll need the passport module so
+// that we can configure it later on
+var passport = require('passport');
+// END
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -10,6 +21,17 @@ var users = require('./routes/users');
 
 var app = express();
 
+// NOTE: we'll need session support so that a user
+// can remain logged in
+var session = require('express-session');
+var sessionOptions = {
+  secret: 'secret cookie thang (store this elsewhere!)',
+  resave: true,
+  saveUninitialized: true
+};
+app.use(session(sessionOptions));
+// END
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -21,6 +43,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// NOTE: initialize passport and let it know that we're enabling sessions
+app.use(passport.initialize());
+app.use(passport.session());
+//END
+
+// NOTE: add some middleware that drops req.user into the context of
+// every template
+app.use(function(req, res, next){
+  res.locals.user = req.user;
+  next();
+});
+// END
 
 app.use('/', routes);
 app.use('/users', users);

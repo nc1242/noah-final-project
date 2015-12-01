@@ -1,11 +1,6 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-
-<form>
-  User Name: <br>
-  <input type="text" name="firstname">
-  <br>
-  Password: <br>
-  <input type="text" name="lastname">
-	<input type="submit" value="Login and PW">
-</form>
+<h2>Home</h2>
+{{#if user}}
+Welcome {{user.username}}
+{{else}}
+<a href="register">register</a> or <a href="login">login</a> 
+{{/if}}
