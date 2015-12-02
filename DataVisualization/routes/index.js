@@ -33,14 +33,14 @@ router.post('/login', function(req,res,next) {
     if(user) {
       // NOTE: using this version of authenticate requires us to
       // call login manually
-      console.log("1: ", req.body.username)
+      //console.log("1: ", req.body.username)
       req.logIn(user, function(err) {
-        console.log("2: ", req.body.username)
-        req.session.user_id = req.body.username
+        //console.log("2: ", req.body.username)
+        //req.session.user_id = req.body.username
         res.redirect('/');
       });
     } else {
-      res.render('login', {message:'Your login or password is incorrect.'});
+      res.render('login', {alert:'Your login or password is incorrect.'});
     }
   })(req, res, next);
   // NOTE: notice that this form of authenticate returns a function that
@@ -57,14 +57,14 @@ router.post('/register', function(req, res) {
       req.body.password, function(err, user){
     if (err) {
       // NOTE: error? send message back to registration...
-      res.render('register',{message:'Your registration information is not valid'});
+      res.render('register',{alert:'Your registration information is not valid'});
     } else {
       // NOTE: once you've registered, you should be logged in automatically
       // ...so call authenticate if there's no error
-        console.log("2: ", req.body.username)
+        //console.log("2: ", req.body.username)
         passport.authenticate('local')(req, res, function() {
-          req.session.user_id = req.body.username
-          console.log("3: ", req.body.username)
+          //req.session.user_id = req.body.username
+          //console.log("3: ", req.body.username)
           res.redirect('/');
         });
     }
@@ -72,16 +72,20 @@ router.post('/register', function(req, res) {
 });
 
 router.use(function(req, res, next){
-  if (req.session.user_id){
+  if (req.isAuthenticated()){
     next()}
   else{
-    res.redirect('/');
+    res.render('index', {alert:'You must log in first.'});
   }
 
 });
 
-router.get('/data', function(req, res) {
-  res.render('data');
+router.get('/logout', function(req, res) {
+  //req.session.user_id = null
+  req.logout()
+  res.redirect('/')
 });
+
+
 
 module.exports = router;

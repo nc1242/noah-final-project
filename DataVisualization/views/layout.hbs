@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    {{{body}}}
-  </body>
-</html>
+<head>
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  <center>
+  <h3 style="color:red;">{{alert}}<h3>
+  <div class = 'container'>
+    <div class= 'sixteen columns'>
+      {{{body}}}
+    </div>
+    <div class = 'sixteen columns'>
+  <nav>{{#if user}}<a href="/logout">logout</a> | <a href="/login">login</a> | <a href="/data">data</a> | {{/if}}<a href="/">home</a></nav></div>
+  </div>
+</center>
+</body>
+
+  </html>

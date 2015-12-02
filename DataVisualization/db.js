@@ -5,14 +5,14 @@ var passportLocalMongoose = require('passport-local-mongoose');
 
 var UserSchema = new mongoose.Schema({ });
 
-var Transaction= new mongoose.Schema({
-	created_at:  Date,
-	amount: Number,
-	id: String,	
+var Transaction = new mongoose.Schema({
+	date :  String,
+	amount : String,
+	id : String	
 });
 
 UserSchema.plugin(passportLocalMongoose);
-
+//Transaction.plugin(URLSlugs('id'));
 mongoose.model('User', UserSchema);
 mongoose.model('Transaction', Transaction);
 mongoose.connect('mongodb://localhost/transactions');
