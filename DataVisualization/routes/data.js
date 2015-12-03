@@ -9,6 +9,9 @@ router.get('/graph', function(req, res) {
   res.render('graph')
 });
 
+router.get('/input', function(req, res) {
+  res.render('input')
+});
 
 router.get('/data', function(req, res) {
   	Transaction.find(function(err, documents, count) {

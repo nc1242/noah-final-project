@@ -3,6 +3,9 @@
 <head>
   <title>{{title}}</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+  <link rel='stylesheet' href='/stylesheets/bootstrap-theme.css' />
+
 </head>
 <body>
   <center>
@@ -12,7 +15,7 @@
       {{{body}}}
     </div>
     <div class = 'sixteen columns'>
-  <nav>{{#if user}}<a href="/logout">logout</a> | <a href="/login">login</a> | <a href="/data">data</a> | {{/if}}<a href="/">home</a></nav></div>
+  <nav>{{#if user}}<a href="/logout">logout</a> | <a href="/login">login</a> | <a href="/data">data</a> | <a href="/input">Add Report</a> | {{/if}}<a href="/">home</a></nav></div>
   </div>
 </center>
 </body>
