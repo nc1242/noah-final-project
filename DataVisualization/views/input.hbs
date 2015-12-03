@@ -1,0 +1,44 @@
+<html>
+<head>
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+<body>
+  <div>
+    <form method="POST" action="">
+      <div id="datetimepicker4" class="input-append">
+      <input data-format="yyyy-MM-dd" type="text" name="date"></input>
+      <span class="add-on">
+        <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+        </i>
+      </span>
+    </div>
+      <input type="text" class="btn-sm" value="" name="amount">
+      <input id="SalesSubmitButton" type="submit" class="btn-sm" value="Submit">
+    </form>
+  </div>
+
+
+
+  <script type="text/javascript"
+  src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+  </script> 
+  <script type="text/javascript"
+  src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+  </script>
+  <script type="text/javascript"
+  src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+  </script>
+  <script type="text/javascript"
+  src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+  </script>
+  <script type="text/javascript">
+  $(function() {
+    $('#datetimepicker4').datetimepicker({
+      pickTime: false
+    });
+  });
+  </script>
+</body>
+<html>
