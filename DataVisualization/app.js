@@ -53,6 +53,7 @@ app.use(passport.session());
 // NOTE: add some middleware that drops req.user into the context of
 // every template
 app.use(function(req, res, next){
+  console.log(req.body.amount, req.body.date)
   res.locals.user = req.user;
   next();
 });

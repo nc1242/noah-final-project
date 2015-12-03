@@ -6,11 +6,26 @@ var Transaction = mongoose.model('Transaction');
 //var User = mongoose.model('User');
 
 router.get('/graph', function(req, res) {
-  res.render('graph')
+	res.render('graph')
 });
 
 router.get('/input', function(req, res) {
-  res.render('input')
+	res.render('input')
+});
+
+router.post('/input', function(req, res) {
+	new Transaction({
+		id : 'temp',
+		amount : req.body.amount,
+		date : req.body.date
+	}).save(function(){
+		/*if (err){
+			console.log(err)
+			res.render('input', {alert: 'error creating transaction'})
+		}*/
+		console.log(req.body.amount, req.body.date)
+		res.render('input', {alert: "successfully created transaction"})
+	})
 });
 
 router.get('/data', function(req, res) {
