@@ -1,12 +1,20 @@
+html, body {
+  /* give this to all tags from html to .fullscreen */
+  height: 100%; }
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
-  color: #00B7FF; }
+  color: #00B7FF;
+  font-weight: normal; }
 
 h3 {
   font-size: 1.17em; }
+
+#title {
+  color: #ffffff;
+  text-shadow: -2px 2px 3px #000000; }
 
 .axis path,
 .axis line {
@@ -25,6 +33,68 @@ h3 {
 .btn {
   background-color: #00B7FF;
   background-image: linear-gradient(to bottom, #fff, #00B7FF); }
+
+/* background setup */
+.background {
+  background-repeat: no-repeat;
+  /* custom background-position */
+  background-position: 50% 50%;
+  /* ie8- graceful degradation */
+  background-position: 50% 50% \9  !important; }
+
+/* fullscreen setup */
+.fullscreen,
+.content-a {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+.fullscreen.overflow,
+.fullscreen.overflow .content-a {
+  height: auto;
+  min-height: 100%; }
+
+/* content centering styles */
+.content-a {
+  display: table; }
+
+.content-b {
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+  text-align: center; }
+
+h1 {
+  font-size: 300%; }
+
+/* visual styles */
+body {
+  margin: 0;
+  font-family: Damascus;
+  font-size: 28px;
+  line-height: 100px;
+  color: #A8A8A8;
+  text-align: center; }
+
+section {
+  background: #9ed100; }
+
+.not-fullscreen {
+  height: 50%;
+  filter: grayscale(100%); }
+
+.thin {
+  height: 5%; }
+
+.solid-banner {
+  font-size: 22px;
+  background-color: #ffffff; }
+
+.circle {
+  width: 20px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px; }
 
 /* #Base 1200 Grid
  * ================================================== */
@@ -52,6 +122,13 @@ h3 {
 
 .column.omega, .columns.omega {
   margin-right: 0; }
+
+/* height margins*/
+.column.beta, .columns.beta {
+  margin-top: 10; }
+
+.column.gamma, .columns.gamma {
+  margin-bottom: 10; }
 
 /* Base Grid */
 .container .one.column {
@@ -185,10 +262,10 @@ h3 {
 
   /* height margins*/
   .column.beta, .columns.beta {
-    margin-top: 0; }
+    margin-top: 10; }
 
   .column.gamma, .columns.gamma {
-    margin-bottom: 0; }
+    margin-bottom: 10; }
 
   /* Base Grid */
   .container .one.column,
