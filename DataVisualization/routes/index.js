@@ -75,7 +75,7 @@ router.use(function(req, res, next){
   if (req.isAuthenticated()){
     next()}
   else{
-    res.redirect('login', 301);
+    res.redirect(301, 'login');
   }
 
 });

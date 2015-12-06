@@ -5,6 +5,12 @@ var db = require( '../db' );
 var Transaction = mongoose.model('Transaction');
 //var User = mongoose.model('User');
 
+// CHAI START
+var chai = require('chai')
+  , expect = chai.expect
+  , should = chai.should();
+// END
+
 router.get('/graph', function(req, res) {
   Transaction.find(function(err, data, count) {
     res.render( 'graph', {dataset : data})
@@ -23,6 +29,10 @@ router.get('/input', function(req, res) {
 
 router.post('/input', function(req, res) {
   function DateGenerator(arr){
+    expect(arr).to.have.length.of(3);
+    expect(arr[0]).to.be.a('string');
+    expect(arr[1]).to.be.a('string');
+    expect(arr[2]).to.be.a('string');
     switch (Number(arr[1])){
       case 1:
         arr[1] = 'Jan';
@@ -63,6 +73,7 @@ router.post('/input', function(req, res) {
       default:
         arr[1] = null;
       }
+      expect(arr[1]).not.to.be.null;
       var newArr = []
       newArr.push(arr[2]);
       newArr.push(arr[1]);
@@ -75,6 +86,7 @@ router.post('/input', function(req, res) {
 
   if (req.body.close != "" && req.body.date != ""){
     var date = DateGenerator(req.body.date.split("-"));
+    expect(date).to.be.a('string');
 
     new Transaction({
       close : req.body.close,
