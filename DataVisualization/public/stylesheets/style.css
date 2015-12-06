@@ -1,38 +1,63 @@
 html, body {
   /* give this to all tags from html to .fullscreen */
-  height: 100%; }
+  height: 100%;
+}
 
+/* visual styles */
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  margin: 0;
+  font-family: Damascus;
+  font-size: 300%;
+  line-height: normal;
+  color: #A8A8A8;
+  text-align: center;
+}
+
+section {
+  background: #9ed100;
+}
 
 a {
   color: #00B7FF;
-  font-weight: normal; }
+  font-weight: normal;
+}
+
+h1 {
+  /*
+@media only screen and (min-width: 100px) and (max-width: 699px) { 
+	font-size: 200%;
+}
+@media only screen and (min-width: 700px) and (max-width: 1600px){
+	font-size: 400%;
+}*/
+  font-size: 200%;
+}
 
 h3 {
-  font-size: 1.17em; }
+  font-size: 3em;
+}
 
 #title {
   color: #ffffff;
-  text-shadow: -2px 2px 3px #000000; }
+  text-shadow: -2px 2px 3px #000000;
+}
 
 .axis path,
 .axis line {
   fill: none;
   stroke: #000;
-  shape-rendering: crispEdges; }
+  shape-rendering: crispEdges;
+}
 
 .x.axis path {
-  display: none; }
+  display: none;
+}
 
 .line {
   fill: none;
   stroke: steelblue;
-  stroke-width: 1.5px; }
-
-.btn {
-  background-color: #00B7FF;
-  background-image: linear-gradient(to bottom, #fff, #00B7FF); }
+  stroke-width: 1.5px;
+}
 
 /* background setup */
 .background {
@@ -40,569 +65,232 @@ h3 {
   /* custom background-position */
   background-position: 50% 50%;
   /* ie8- graceful degradation */
-  background-position: 50% 50% \9  !important; }
+  background-position: 50% 50% \9  !important;
+}
 
 /* fullscreen setup */
 .fullscreen,
 .content-a {
   width: 100%;
   height: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .fullscreen.overflow,
 .fullscreen.overflow .content-a {
   height: auto;
-  min-height: 100%; }
+  min-height: 100%;
+}
 
 /* content centering styles */
 .content-a {
-  display: table; }
+  display: table;
+}
 
 .content-b {
   display: table-cell;
   position: relative;
   vertical-align: middle;
-  text-align: center; }
-
-h1 {
-  font-size: 300%; }
-
-/* visual styles */
-body {
-  margin: 0;
-  font-family: Damascus;
-  font-size: 28px;
-  line-height: 100px;
-  color: #A8A8A8;
-  text-align: center; }
-
-section {
-  background: #9ed100; }
+  text-align: center;
+}
 
 .not-fullscreen {
   height: 50%;
-  filter: grayscale(100%); }
+  filter: grayscale(100%);
+}
 
 .thin {
-  height: 5%; }
+  height: 5%;
+}
 
 .solid-banner {
   font-size: 22px;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+}
 
 .circle {
   width: 20px;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
-  border-radius: 25px; }
+  border-radius: 25px;
+}
 
-/* #Base 1200 Grid
- * ================================================== */
+/* #Base 1440 Grid
+				 * ================================================== */
 .container {
   position: relative;
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0; }
+  padding: 0;
+}
 
 .column, .columns {
   float: left;
   display: inline;
   margin-left: 10px;
-  margin-right: 10px; }
+  margin-right: 10px;
+}
 
 .row {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+}
 
 .container .offset-by-custom {
-  padding-left: 0px; }
+  padding-left: 0px;
+}
 
 /* Nested Column Classes */
 .column.alpha, .columns.alpha {
-  margin-left: 0; }
+  margin-left: 0;
+}
 
 .column.omega, .columns.omega {
-  margin-right: 0; }
+  margin-right: 0;
+}
 
 /* height margins*/
 .column.beta, .columns.beta {
-  margin-top: 10; }
+  margin-top: 10px;
+}
 
 .column.gamma, .columns.gamma {
-  margin-bottom: 10; }
+  margin-bottom: 10px;
+}
 
 /* Base Grid */
 .container .one.column {
-  width: 55px; }
+  width: 3%;
+}
 
 .container .two.columns {
-  width: 130px; }
+  width: 9%;
+}
 
 .container .three.columns {
-  width: 205px; }
+  width: 15%;
+}
 
 .container .four.columns {
-  width: 280px; }
+  width: 21%;
+}
 
 .container .five.columns {
-  width: 355px; }
+  width: 27%;
+}
 
 .container .six.columns {
-  width: 430px; }
+  width: 33%;
+}
 
 .container .seven.columns {
-  width: 505px; }
+  width: 39%;
+}
 
 .container .eight.columns {
-  width: 580px; }
+  width: 45%;
+}
 
 .container .nine.columns {
-  width: 655px; }
+  width: 51%;
+}
 
 .container .ten.columns {
-  width: 730px; }
+  width: 57%;
+}
 
 .container .eleven.columns {
-  width: 805px; }
+  width: 63%;
+}
 
 .container .twelve.columns {
-  width: 880px; }
+  width: 69%;
+}
 
 .container .thirteen.columns {
-  width: 955px; }
+  width: 75%;
+}
 
 .container .fourteen.columns {
-  width: 1030px; }
+  width: 81%;
+}
 
 .container .fifteen.columns {
-  width: 1105px; }
+  width: 87%;
+}
 
 .container .sixteen.columns {
-  width: 1180px; }
+  width: 93%;
+}
 
 .container .one-third.column {
-  width: 380px; }
+  width: 380px;
+}
 
 .container .two-thirds.column {
-  width: 780px; }
+  width: 780px;
+}
 
 .container .one-fifth.column {
-  width: 220px; }
+  width: 220px;
+}
 
 /* Offsets */
 .container .offset-by-one {
-  padding-left: 75px; }
+  margin-left: 13%;
+}
 
 .container .offset-by-two {
-  padding-left: 150px; }
+  margin-left: 19%;
+}
 
 .container .offset-by-three {
-  padding-left: 225px; }
+  margin-left: 25%;
+}
 
 .container .offset-by-four {
-  padding-left: 300px; }
+  margin-left: 31%;
+}
 
 .container .offset-by-five {
-  padding-left: 375px; }
+  margin-left: 37%;
+}
 
 .container .offset-by-six {
-  padding-left: 450px; }
+  margin-left: 43%;
+}
 
 .container .offset-by-seven {
-  padding-left: 525px; }
+  margin-left: 49%;
+}
 
 .container .offset-by-eight {
-  padding-left: 600px; }
+  margin-left: 55%;
+}
 
 .container .offset-by-nine {
-  padding-left: 675px; }
+  margin-left: 61%;
+}
 
 .container .offset-by-ten {
-  padding-left: 750px; }
+  margin-left: 67%;
+}
 
 .container .offset-by-eleven {
-  padding-left: 825px; }
+  margin-left: 73%;
+}
 
 .container .offset-by-twelve {
-  padding-left: 900px; }
+  margin-left: 79%;
+}
 
 .container .offset-by-thirteen {
-  padding-left: 975px; }
+  margin-left: 85%;
+}
 
 .container .offset-by-fourteen {
-  padding-left: 1050px; }
+  margin-left: 91%;
+}
 
 .container .offset-by-fifteen {
-  padding-left: 1125px; }
-
-/* #Base 960 Grid
- * ================================================== */
-@media only screen and (min-width: 960px) and (max-width: 1199px) {
-  .container {
-    position: relative;
-    width: 960px;
-    margin: 0 auto;
-    padding: 0; }
-
-  .container .column,
-  .container .columns {
-    float: left;
-    display: inline;
-    margin-left: 10px;
-    margin-right: 10px; }
-
-  .row {
-    margin-bottom: 20px; }
-
-  /* Nested Column Classes */
-  .column.alpha, .columns.alpha {
-    margin-left: 0; }
-
-  .column.omega, .columns.omega {
-    margin-right: 0; }
-
-  /* height margins*/
-  .column.beta, .columns.beta {
-    margin-top: 10; }
-
-  .column.gamma, .columns.gamma {
-    margin-bottom: 10; }
-
-  /* Base Grid */
-  .container .one.column,
-  .container .one.columns {
-    width: 40px; }
-
-  .container .two.columns {
-    width: 100px; }
-
-  .container .three.columns {
-    width: 160px; }
-
-  .container .four.columns {
-    width: 220px; }
-
-  .container .five.columns {
-    width: 280px; }
-
-  .container .six.columns {
-    width: 340px; }
-
-  .container .seven.columns {
-    width: 400px; }
-
-  .container .eight.columns {
-    width: 460px; }
-
-  .container .nine.columns {
-    width: 520px; }
-
-  .container .ten.columns {
-    width: 580px; }
-
-  .container .eleven.columns {
-    width: 640px; }
-
-  .container .twelve.columns {
-    width: 700px; }
-
-  .container .thirteen.columns {
-    width: 760px; }
-
-  .container .fourteen.columns {
-    width: 820px; }
-
-  .container .fifteen.columns {
-    width: 880px; }
-
-  .container .sixteen.columns {
-    width: 940px; }
-
-  .container .one-third.column {
-    width: 300px; }
-
-  .container .two-thirds.column {
-    width: 620px; }
-
-  .container .one-fifth.column {
-    width: 172px; }
-
-  /* Offsets */
-  .container .offset-by-one {
-    padding-left: 60px; }
-
-  .container .offset-by-two {
-    padding-left: 120px; }
-
-  .container .offset-by-three {
-    padding-left: 180px; }
-
-  .container .offset-by-four {
-    padding-left: 240px; }
-
-  .container .offset-by-five {
-    padding-left: 300px; }
-
-  .container .offset-by-six {
-    padding-left: 360px; }
-
-  .container .offset-by-seven {
-    padding-left: 420px; }
-
-  .container .offset-by-eight {
-    padding-left: 480px; }
-
-  .container .offset-by-nine {
-    padding-left: 540px; }
-
-  .container .offset-by-ten {
-    padding-left: 600px; }
-
-  .container .offset-by-eleven {
-    padding-left: 660px; }
-
-  .container .offset-by-twelve {
-    padding-left: 720px; }
-
-  .container .offset-by-thirteen {
-    padding-left: 780px; }
-
-  .container .offset-by-fourteen {
-    padding-left: 840px; }
-
-  .container .offset-by-fifteen {
-    padding-left: 900px; } }
-/* #Tablet (Portrait)
- * ================================================== */
-/* Note: Design for a width of 768px */
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-  .container {
-    width: 768px; }
-
-  .container .column,
-  .container .columns {
-    margin-left: 10px;
-    margin-right: 10px; }
-
-  .column.alpha, .columns.alpha {
-    margin-left: 0;
-    margin-right: 10px; }
-
-  .column.omega, .columns.omega {
-    margin-right: 0;
-    margin-left: 10px; }
-
-  .alpha.omega {
-    margin-left: 0;
-    margin-right: 0; }
-
-  /* height margins*/
-  .column.beta, .columns.beta {
-    margin-top: 0; }
-
-  .column.gamma, .columns.gamma {
-    margin-bottom: 0; }
-
-  .container .one.column,
-  .container .one.columns {
-    width: 28px; }
-
-  .container .two.columns {
-    width: 76px; }
-
-  .container .three.columns {
-    width: 124px; }
-
-  .container .four.columns {
-    width: 172px; }
-
-  .container .five.columns {
-    width: 220px; }
-
-  .container .six.columns {
-    width: 268px; }
-
-  .container .seven.columns {
-    width: 316px; }
-
-  .container .eight.columns {
-    width: 364px; }
-
-  .container .nine.columns {
-    width: 412px; }
-
-  .container .ten.columns {
-    width: 460px; }
-
-  .container .eleven.columns {
-    width: 508px; }
-
-  .container .twelve.columns {
-    width: 556px; }
-
-  .container .thirteen.columns {
-    width: 604px; }
-
-  .container .fourteen.columns {
-    width: 652px; }
-
-  .container .fifteen.columns {
-    width: 700px; }
-
-  .container .sixteen.columns {
-    width: 748px; }
-
-  .container .one-third.column {
-    width: 236px; }
-
-  .container .two-thirds.column {
-    width: 492px; }
-
-  .container .one-fifth.column {
-    width: 133px; }
-
-  /* Offsets */
-  .container .offset-by-one {
-    padding-left: 48px; }
-
-  .container .offset-by-two {
-    padding-left: 96px; }
-
-  .container .offset-by-three {
-    padding-left: 144px; }
-
-  .container .offset-by-four {
-    padding-left: 192px; }
-
-  .container .offset-by-five {
-    padding-left: 240px; }
-
-  .container .offset-by-six {
-    padding-left: 288px; }
-
-  .container .offset-by-seven {
-    padding-left: 336px; }
-
-  .container .offset-by-eight {
-    padding-left: 384px; }
-
-  .container .offset-by-nine {
-    padding-left: 432px; }
-
-  .container .offset-by-ten {
-    padding-left: 480px; }
-
-  .container .offset-by-eleven {
-    padding-left: 528px; }
-
-  .container .offset-by-twelve {
-    padding-left: 576px; }
-
-  .container .offset-by-thirteen {
-    padding-left: 624px; }
-
-  .container .offset-by-fourteen {
-    padding-left: 672px; }
-
-  .container .offset-by-fifteen {
-    padding-left: 720px; } }
-/*  #Mobile (Portrait)
-*  ================================================== */
-/* Note: Design for a width of 320px */
-@media only screen and (max-width: 767px) {
-  .container {
-    width: 300px; }
-
-  .container .columns,
-  .container .column {
-    margin: 0; }
-
-  /* height margins*/
-  .column.beta, .columns.beta {
-    margin-top: 0; }
-
-  .column.gamma, .columns.gamma {
-    margin-bottom: 0; }
-
-  .container .one.column,
-  .container .one.columns,
-  .container .two.columns,
-  .container .three.columns,
-  .container .four.columns,
-  .container .five.columns,
-  .container .six.columns,
-  .container .seven.columns,
-  .container .eight.columns,
-  .container .nine.columns,
-  .container .ten.columns,
-  .container .eleven.columns,
-  .container .twelve.columns,
-  .container .thirteen.columns,
-  .container .fourteen.columns,
-  .container .fifteen.columns,
-  .container .sixteen.columns,
-  .container .one-third.column,
-  .container .two-thirds.column {
-    width: 300px; }
-
-  .container .one-fifth.column {
-    width: 140px; }
-
-  .container .one-fifth.column:nth-child(2n) {
-    margin-left: 20px; }
-
-  /* Offsets */
-  .container .offset-by-one,
-  .container .offset-by-two,
-  .container .offset-by-three,
-  .container .offset-by-four,
-  .container .offset-by-five,
-  .container .offset-by-six,
-  .container .offset-by-seven,
-  .container .offset-by-eight,
-  .container .offset-by-nine,
-  .container .offset-by-ten,
-  .container .offset-by-eleven,
-  .container .offset-by-twelve,
-  .container .offset-by-thirteen,
-  .container .offset-by-fourteen,
-  .container .offset-by-fifteen {
-    padding-left: 0; } }
-/* #Mobile (Landscape)
-* ================================================== */
-/* Note: Design for a width of 480px */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-  .container {
-    width: 420px; }
-
-  .container .columns,
-  .container .column {
-    margin: 0; }
-
-  .container .one.column,
-  .container .one.columns,
-  .container .two.columns,
-  .container .three.columns,
-  .container .four.columns,
-  .container .five.columns,
-  .container .six.columns,
-  .container .seven.columns,
-  .container .eight.columns,
-  .container .nine.columns,
-  .container .ten.columns,
-  .container .eleven.columns,
-  .container .twelve.columns,
-  .container .thirteen.columns,
-  .container .fourteen.columns,
-  .container .fifteen.columns,
-  .container .sixteen.columns,
-  .container .one-third.column,
-  .container .two-thirds.column {
-    width: 420px; }
-
-  .container .one-fifth.column {
-    width: 200px; }
-
-  .container .one-fifth.column:nth-child(2n) {
-    margin-left: 20px; } }
-
-/*# sourceMappingURL=style.css.map */
+  margin-left: 97%;
+}

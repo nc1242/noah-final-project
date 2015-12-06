@@ -9,18 +9,37 @@ require('./auth');
 var passport = require('passport');
 // END
 
+var _ = require('underscore-node');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var sassMiddleware = require('node-sass-middleware');
+var serveStatic = require('serve-static')
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var data = require('./routes/data');
 
 var app = express();
+
+// Sass middleware
+var srcPath = __dirname + '/scss';
+var destPath = __dirname + '/public/';
+
+app.use(sassMiddleware({
+  src: srcPath,
+  dest: destPath,
+  debug: true,
+  outputStyle: 'expanded'
+}));
+app.use('/',
+  express.static(path.join(__dirname, 'public'))
+);
+// END
+
 
 // NOTE: we'll need session support so that a user
 // can remain logged in
@@ -43,17 +62,18 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
 
 // NOTE: initialize passport and let it know that we're enabling sessions
 app.use(passport.initialize());
 app.use(passport.session());
 //END
 
+
 // NOTE: add some middleware that drops req.user into the context of
 // every template
 app.use(function(req, res, next){
-  console.log(req.body.amount, req.body.date)
+  //console.log(req.body.amount, req.body.date)
   res.locals.user = req.user;
   next();
 });

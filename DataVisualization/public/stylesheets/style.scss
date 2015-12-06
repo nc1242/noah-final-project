@@ -1,5 +1,6 @@
 $primary-color: #00B7FF;
 $secondary-color: #ffffff;
+$default-padding : 10px;
 
 html, body {
     /* give this to all tags from html to .fullscreen */
@@ -40,10 +41,6 @@ h3{
 	stroke-width: 1.5px;
 }
 
-.btn{
-	background-color: $primary-color;
-	background-image: linear-gradient(to bottom,#fff, $primary-color);
-}
 
 
 
@@ -84,7 +81,12 @@ h3{
 }
 
 h1{
-font-size:300%;
+	 @media (min-width: 1600px) { 
+		font-size: 20px;
+	}
+	 @media (min-width: 700px) {
+		font-size: 50px;
+	}
 }
 
 /* visual styles */
@@ -92,7 +94,7 @@ body{
     margin:0;
     font-family:Damascus;
     font-size:28px;
-    line-height:100px;
+    /*line-height:100px;*/
 	color:#A8A8A8;
     text-align:center;
 }
@@ -118,11 +120,8 @@ section {
     border-radius: 25px; 
 }
 
-
-
-
-/* #Base 1200 Grid
- * ================================================== */
+/* #Base 1440 Grid
+				 * ================================================== */
 
 				.container                                  { position: relative; width: 1200px; margin: 0 auto; padding: 0;}
 
@@ -137,8 +136,75 @@ section {
 				.column.omega, .columns.omega               { margin-right: 0; }
 
 				/* height margins*/
-				.column.beta, .columns.beta         				{ margin-top: 10;  }
-				.column.gamma, .columns.gamma       				{ margin-bottom: 10; }
+				.column.beta, .columns.beta         		{ margin-top: $default-padding;  }
+				.column.gamma, .columns.gamma       		{ margin-bottom: $default-padding; }
+
+				/* Base Grid */
+				.container .one.column                      { width: 20px;  }
+				.container .two.columns                     { width: 110px; }
+				.container .three.columns                   { width: 250px; }
+				.container .four.columns                    { width: 340px; }
+				.container .five.columns                    { width: 430px; }
+				.container .six.columns                     { width: 520px; }
+				.container .seven.columns                   { width: 610px; }
+				.container .eight.columns                   { width: 700px; }
+				.container .nine.columns                    { width: 790px; }
+				.container .ten.columns                     { width: 880px; }
+				.container .eleven.columns                  { width: 970px; }
+				.container .twelve.columns                  { width: 1060px; }
+				.container .thirteen.columns                { width: 1150px; }
+				.container .fourteen.columns                { width: 1240px; }
+				.container .fifteen.columns                 { width: 1330px; }
+				.container .sixteen.columns                 { width: 1420px; }
+
+				.container .one-third.column                { width: 380px; }
+				.container .two-thirds.column               { width: 780px; }
+				.container .one-fifth.column                { width: 220px; }
+
+
+				/* Offsets */
+				.container .offset-by-one                   { padding-left: 90px;  }
+				.container .offset-by-two                   { padding-left: 180px; }
+				.container .offset-by-three                 { padding-left: 270px; }
+				.container .offset-by-four                  { padding-left: 360px; }
+				.container .offset-by-five                  { padding-left: 450px; }
+				.container .offset-by-six                   { padding-left: 540px; }
+				.container .offset-by-seven                 { padding-left: 630px; }
+				.container .offset-by-eight                 { padding-left: 720px; }
+				.container .offset-by-nine                  { padding-left: 810px; }
+				.container .offset-by-ten                   { padding-left: 900px; }
+				.container .offset-by-eleven                { padding-left: 990px; }
+				.container .offset-by-twelve                { padding-left: 1080px; }
+				.container .offset-by-thirteen              { padding-left: 1170px; }
+				.container .offset-by-fourteen              { padding-left: 1260px; }
+				.container .offset-by-fifteen               { padding-left: 1350px; }
+
+
+
+
+
+
+
+
+/* #Base 1200 Grid
+ * ================================================== */
+				@media only screen and (min-width: 1200px) and (max-width: 1439px) {
+
+				.container                                  { position: relative; width: 1200px; margin: 0 auto; padding: 0;}
+
+				.column, .columns                           { float: left; display: inline; margin-left: 10px; margin-right: 10px;}
+
+				.row                                        { margin-bottom: 20px; }
+
+				.container .offset-by-custom                { padding-left: 0px; }
+
+				/* Nested Column Classes */
+				.column.alpha, .columns.alpha               { margin-left: 0; }
+				.column.omega, .columns.omega               { margin-right: 0; }
+
+				/* height margins*/
+				.column.beta, .columns.beta         		{ margin-top: $default-padding;  }
+				.column.gamma, .columns.gamma       		{ margin-bottom: $default-padding; }
 
 				/* Base Grid */
 				.container .one.column                      { width: 55px;  }
@@ -180,6 +246,8 @@ section {
 				.container .offset-by-fourteen              { padding-left: 1050px; }
 				.container .offset-by-fifteen               { padding-left: 1125px; }
 
+			}
+
 				/* #Base 960 Grid
 				 * ================================================== */
 
@@ -194,8 +262,8 @@ section {
 								.column.omega, .columns.omega               { margin-right: 0; }
 
 								/* height margins*/
-								.column.beta, .columns.beta         				{ margin-top: 10;  }
-								.column.gamma, .columns.gamma       				{ margin-bottom: 10; }
+								.column.beta, .columns.beta         				{ margin-top: $default-padding;  }
+								.column.gamma, .columns.gamma       				{ margin-bottom: $default-padding; }
 
 								/* Base Grid */
 								.container .one.column,
@@ -252,8 +320,8 @@ section {
 								.alpha.omega                                { margin-left: 0; margin-right: 0; }
 
 								/* height margins*/
-								.column.beta, .columns.beta         				{ margin-top: 0;  }
-								.column.gamma, .columns.gamma       				{ margin-bottom: 0; }
+								.column.beta, .columns.beta         		{ margin-top: $default-padding;  }
+								.column.gamma, .columns.gamma       		{ margin-bottom: $default-padding; }
 
 								.container .one.column,
 								.container .one.columns                     { width: 28px; }
@@ -307,8 +375,8 @@ section {
 								.container .column { margin: 0; }
 
 								/* height margins*/
-								.column.beta, .columns.beta         				{ margin-top: 0;  }
-								.column.gamma, .columns.gamma       				{ margin-bottom: 0; }
+								.column.beta, .columns.beta         				{ margin-top: $default-padding;  }
+								.column.gamma, .columns.gamma       				{ margin-bottom: $default-padding; }
 
 								.container .one.column,
 								.container .one.columns,
@@ -361,6 +429,9 @@ section {
 								.container { width: 420px; }
 								.container .columns,
 								.container .column { margin: 0; }
+								
+								.column.beta, .columns.beta         				{ margin-top: $default-padding;  }
+								.column.gamma, .columns.gamma       				{ margin-bottom: $default-padding; }
 
 								.container .one.column,
 								.container .one.columns,

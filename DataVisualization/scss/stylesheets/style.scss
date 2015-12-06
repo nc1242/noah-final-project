@@ -1,0 +1,186 @@
+$primary-color: #00B7FF;
+$secondary-color: #ffffff;
+$default-padding : 10px;
+
+html, body {
+    /* give this to all tags from html to .fullscreen */
+    height:100%;
+}
+
+
+/* visual styles */
+body{
+    margin:0;
+    font-family:Damascus;
+    font-size: 300%;
+    line-height: normal;
+	color:#A8A8A8;
+    text-align:center;
+}
+
+section {
+	background:#9ed100;
+}
+
+a {
+				color: $primary-color;
+				font-weight: normal;
+}
+
+
+h1{
+/*
+@media only screen and (min-width: 100px) and (max-width: 699px) { 
+	font-size: 200%;
+}
+@media only screen and (min-width: 700px) and (max-width: 1600px){
+	font-size: 400%;
+}*/
+font-size:200%;
+}
+
+h3{
+	font-size: 3em;
+}
+
+#title{
+	color: $secondary-color;
+	text-shadow: -2px 2px 3px #000000;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.x.axis path {
+	display: none;
+}
+
+.line {
+	fill: none;
+	stroke: steelblue;
+	stroke-width: 1.5px;
+}
+
+
+
+
+
+
+/* background setup */
+.background {
+    background-repeat:no-repeat;
+    /* custom background-position */
+    background-position:50% 50%;
+    /* ie8- graceful degradation */
+    background-position:50% 50%\9 !important;
+}
+
+/* fullscreen setup */
+
+.fullscreen,
+.content-a {
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+.fullscreen.overflow,
+.fullscreen.overflow .content-a {
+    height:auto;
+    min-height:100%;
+}
+
+/* content centering styles */
+.content-a {
+    display:table;
+}
+.content-b {
+	display:table-cell;
+    position:relative;
+	vertical-align:middle;
+	text-align:center;
+}
+
+.not-fullscreen {
+    height:50%;
+    filter: grayscale(100%);
+}
+.thin {
+	height:5%;
+}
+.solid-banner{
+    font-size:22px;
+    background-color:#ffffff;
+}
+
+.circle {
+    width: 20px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px; 
+}
+
+				/* #Base 1440 Grid
+				 * ================================================== */
+
+				.container                                  { position: relative; width: 100%; margin: 0 auto; padding: 0;}
+
+				.column, .columns                           { float: left; display: inline; margin-left: 10px; margin-right: 10px;}
+
+				.row                                        { margin-bottom: 20px; }
+
+				.container .offset-by-custom                { padding-left: 0px; }
+
+				/* Nested Column Classes */
+				.column.alpha, .columns.alpha               { margin-left: 0; }
+				.column.omega, .columns.omega               { margin-right: 0; }
+
+				/* height margins*/
+				.column.beta, .columns.beta         		{ margin-top: $default-padding;  }
+				.column.gamma, .columns.gamma       		{ margin-bottom: $default-padding; }
+
+				/* Base Grid */
+				.container .one.column                      { width: 3%;  }
+				.container .two.columns                     { width: 9%; }
+				.container .three.columns                   { width: 15%; }
+				.container .four.columns                    { width: 21%; }
+				.container .five.columns                    { width: 27%; }
+				.container .six.columns                     { width: 33%; }
+				.container .seven.columns                   { width: 39%; }
+				.container .eight.columns                   { width: 45%; }
+				.container .nine.columns                    { width: 51%; }
+				.container .ten.columns                     { width: 57%; }
+				.container .eleven.columns                  { width: 63%; }
+				.container .twelve.columns                  { width: 69%; }
+				.container .thirteen.columns                { width: 75%; }
+				.container .fourteen.columns                { width: 81%; }
+				.container .fifteen.columns                 { width: 87%; }
+				.container .sixteen.columns                 { width: 93%; }
+
+				.container .one-third.column                { width: 380px; }
+				.container .two-thirds.column               { width: 780px; }
+				.container .one-fifth.column                { width: 220px; }
+
+
+				/* Offsets */
+				.container .offset-by-one                   { margin-left: 13%; }
+				.container .offset-by-two                   { margin-left: 19%; }
+				.container .offset-by-three                 { margin-left: 25%; }
+				.container .offset-by-four                  { margin-left: 31%; }
+				.container .offset-by-five                  { margin-left: 37%; }
+				.container .offset-by-six                   { margin-left: 43%; }
+				.container .offset-by-seven                 { margin-left: 49%; }
+				.container .offset-by-eight                 { margin-left: 55%; }
+				.container .offset-by-nine                  { margin-left: 61%; }
+				.container .offset-by-ten                   { margin-left: 67%; }
+				.container .offset-by-eleven                { margin-left: 73%; }
+				.container .offset-by-twelve                { margin-left: 79%; }
+				.container .offset-by-thirteen              { margin-left: 85%; }
+				.container .offset-by-fourteen              { margin-left: 91%; }
+				.container .offset-by-fifteen               { margin-left: 97%; }
+
+
+

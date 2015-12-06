@@ -75,7 +75,7 @@ router.use(function(req, res, next){
   if (req.isAuthenticated()){
     next()}
   else{
-    res.render('index', {alert:'You must log in first.'});
+    res.redirect('login', 301);
   }
 
 });

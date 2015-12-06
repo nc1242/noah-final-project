@@ -1,3 +1,4 @@
+<!DOCTYPE>
 <html>
 <head>
   <title>{{title}}</title>
@@ -10,11 +11,18 @@
   <center>
     <body>
 {{#if alert}}
-  <h3 style="color:red;">{{alert}}</h3>
+  <h3 style="color:red; font-size:1em;">{{{alert}}}</h3>
 {{/if}}
+<div class="container">
       {{{body}}}
+    </div>
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
     <div class = 'sixteen columns'>
-  <nav>{{#if user}}<a href="/logout">logout</a> | <a href="/login">login</a> | <a href="/data">data</a> | <a href="/input">Add Report</a> | {{/if}}<a href="/">home</a></nav></div>
+  <nav>{{#if user}}<a href="/logout">logout</a> | <a href="/login">login</a> | <a href="/data">data</a> | <a href="/input">Add Report</a> |  <a href="/graph">graph</a> | {{/if}}<a href="/">home</a></nav></div>
 </center>
 </body>
 

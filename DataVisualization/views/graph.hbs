@@ -1,4 +1,4 @@
-<body>
+<div id="graph" class="fullscreen background parallax">
 	<script src="/javascripts/d3.min.js"></script>
 	<script>
 
@@ -26,14 +26,18 @@
 	.x(function(d) { return x(d.date); })
 	.y(function(d) { return y(d.close); });
 
-	var svg = d3.select(".container").append("svg")
-	//.attr("width", width + margin.left + margin.right)
+
+
+	var svg = d3.select("#graph").append("svg")
+	svg.attr("width", width + margin.left + margin.right)
 	svg.attr("height", height + margin.top + margin.bottom)
 	//.attr("width", 80%)
 	//svg.attr("height", 100%)
-	svg.attr("class", 'sixteen columns')
+	//svg.attr("class", 'sixteen columns')
 	.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
 
 	d3.tsv("/data.tsv", function(error, data) {
 	//d3.json({{tuple}}, function(error, data) {
@@ -67,5 +71,11 @@
 		.attr("class", "line")
 		.attr("d", line);
 	});
-
+/*
+http://stackoverflow.com/questions/17622936/render-d3-graph-from-a-string-of-json-instead-of-a-json-file
+http://stackoverflow.com/questions/10549585/d3-js-json-simple-sample-code
+https://github.com/mbostock/d3/wiki/Selections#data
+http://alignedleft.com/tutorials/d3/binding-data/
+*/
 	</script>
+</div>
