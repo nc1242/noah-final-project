@@ -7,10 +7,13 @@ html, body {
 body {
   margin: 0;
   font-family: Damascus;
-  font-size: 300%;
   line-height: normal;
   color: #A8A8A8;
   text-align: center;
+}
+
+form {
+  color: #ffffff;
 }
 
 section {
@@ -22,6 +25,14 @@ a {
   font-weight: normal;
 }
 
+a.notBlue {
+  color: #a8a8a8;
+}
+
+nav {
+  font-size: 75%;
+}
+
 h1 {
   /*
 @media only screen and (min-width: 100px) and (max-width: 699px) { 
@@ -30,11 +41,45 @@ h1 {
 @media only screen and (min-width: 700px) and (max-width: 1600px){
 	font-size: 400%;
 }*/
+  color: #ffffff;
   font-size: 200%;
 }
 
 h3 {
   font-size: 3em;
+}
+
+input {
+  width: 40%;
+}
+
+input[type="submit"] {
+  margin-top: 10px;
+}
+
+input[type="text"], [type="password"] {
+  color: #00B7FF;
+}
+
+ul {
+  display: inline-block;
+  color: #a8a8a8;
+}
+
+li {
+  text-align: left;
+  margin-left: 10px;
+  padding: 0;
+  color: #a8a8a8;
+}
+
+#float {
+  background: #0066CC;
+  width: 20%;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  color: #ffffff;
 }
 
 #title {

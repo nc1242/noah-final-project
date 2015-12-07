@@ -8,22 +8,34 @@
 
 </head>
 
-  <center>
-    <body>
-{{#if alert}}
-  <h3 style="color:red; font-size:1em;">{{{alert}}}</h3>
-{{/if}}
-<div class="container">
+<center>
+  <body>
+    {{#if alert}}
+    <h3 style="color:red; font-size:1em;">{{{alert}}}</h3>
+    {{/if}}
+    <div class="container">
       {{{body}}}
     </div>
-      <p>1</p>
-      <p>2</p>
-      <p>3</p>
-      <p>4</p>
-      <p>5</p>
     <div class = 'sixteen columns'>
-  <nav>{{#if user}}<a href="/logout">logout</a> | <a href="/login">login</a> | <a href="/data">data</a> | <a href="/input">Add Report</a> |  <a href="/graph">graph</a> | {{/if}}<a href="/">home</a></nav></div>
-</center>
-</body>
+    <!--
+      <nav>{{#if user}}<a href="/logout">logout</a> | <a href="/login">login</a> | <a href="/data">data</a> | <a href="/input">Add Report</a> |  <a href="/graph">graph</a> | {{/if}}<a href="/">home</a></nav>
+    -->
+    </div>
+    </center>
+    <div id="float">
+    <ul>
+      {{#if user}}
+      <li><a class="notBlue" href="/logout">logout</a></li>
+      <li><a class="notBlue" href="/data">data</a></li>
+      <li><a class="notBlue" href="/input">add report</a></li>
+      <li><a class="notBlue" href="/graph">graph</a></li>
+      {{else}}
+      <li><a class="notBlue" href="/login">login</a></li>
+      {{/if}}
+      <li><a class="notBlue" href="/">home</a></li>
+    </ul>
+    </div>
+
+  </body>
 
   </html>

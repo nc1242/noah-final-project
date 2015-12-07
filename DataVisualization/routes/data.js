@@ -6,7 +6,7 @@ var Transaction = mongoose.model('Transaction');
 //var User = mongoose.model('User');
 
 // CHAI START
-var chai = require('chai');
+var chai = require('chai')
   , expect = chai.expect
   , should = chai.should();
 // END
