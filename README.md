@@ -28,6 +28,7 @@ Mongoose- no-sql database http://d3js.org
 (1 Point)	Responsive design- mobile tablet layouts
 (1 Point)	Sass CSS
 (1 Point)	JSHint
+(1 Point)	Express project templates- Express Generator
 
 ## Wireframes
 
