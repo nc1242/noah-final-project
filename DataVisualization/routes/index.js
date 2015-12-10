@@ -73,7 +73,7 @@ router.post('/register', function(req, res) {
 
 router.use(function(req, res, next){
   if (req.isAuthenticated()){
-    next()}
+    next();}
   else{
     res.redirect(301, 'login');
   }
@@ -82,8 +82,8 @@ router.use(function(req, res, next){
 
 router.get('/logout', function(req, res) {
   //req.session.user_id = null
-  req.logout()
-  res.redirect('/')
+  req.logout();
+  res.redirect('/');
 });
 
 

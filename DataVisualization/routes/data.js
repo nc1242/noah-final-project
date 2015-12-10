@@ -13,17 +13,17 @@ var chai = require('chai')
 
 router.get('/graph', function(req, res) {
   Transaction.find(function(err, data, count) {
-    res.render( 'graph', {dataset : data})
-  })
+    res.render( 'graph', {dataset : data});
+  });
   //res.render('graph', {dataset: data})
 });
 
 router.get('/graph2', function(req, res) {
-  res.render('graph2')
+  res.render('graph2');
 });
 
 router.get('/input', function(req, res) {
-  res.render('input')
+  res.render('input');
 });
 
 /*
@@ -80,17 +80,17 @@ router.post('/input', function(req, res) {
         arr[1] = null;
       }
       expect(arr[1]).not.to.be.null;
-      var newArr = []
+      var newArr = [];
       newArr.push(arr[2]);
       newArr.push(arr[1]);
-      newArr.push(arr[0].slice(-2))
-      var str = newArr.toString()
+      newArr.push(arr[0].slice(-2));
+      var str = newArr.toString();
       var res = replaceAll(str, ",", "-");
       return res;
   }
 
 
-  if (req.body.close != "" && req.body.date != ""){
+  if (req.body.close !== "" && req.body.date !== ""){
     var date = DateGenerator(req.body.date.split("-"));
     expect(date).to.be.a('string');
 
@@ -99,28 +99,28 @@ router.post('/input', function(req, res) {
       date : date
     }).save(function(err){
   		if (err){
-  			console.log(err)
-  			res.render('input', {alert: err})
+  			console.log(err);
+  			res.render('input', {alert: err});
   		}
-		  console.log(req.body.amount, req.body.date)
-		  res.render('input', {alert: "successfully created transaction"})
-	 })
+		  console.log(req.body.amount, req.body.date);
+		  res.render('input', {alert: "successfully created transaction"});
+	 });
   }
   else{
-      res.render('input', {alert: "invalid transaction"}) 
+      res.render('input', {alert: "invalid transaction"});
   }
 });
 
 router.get('/data', function(req, res) {
     Transaction.find(function(err, data, count) {
-    res.render( 'data', {tuple : data})
-  })
+    res.render( 'data', {tuple : data});
+  });
 });
 
 router.get('/data2', function(req, res) {
     Transaction.find(function(err, data, count) {
     res.send(data);
-  })
+  });
 });
 
 function replaceAll(str, find, replace) {
