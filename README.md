@@ -4,7 +4,7 @@
 ## Overview
 This program will be a great way to visualize data. This is intended to help graphically monitor sales and analyze trends. I'll be storing sales transactions into a MongoDB and querying it based on inputted dates. There will be User Authentication to verify whoever is looking at the data is authorized.
 
-NOTE: On the homepage dont forget to scroll down
+NOTE: On the homepage dont forget to scroll down. On the Graph page, hover over certain points to see their corresponding value. 
 
 ## Data Model
 

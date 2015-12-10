@@ -36,10 +36,10 @@ Released under the MIT license: http://jsbin.mit-license.org
 		<div class="content-a">
 			<div class="content-b">
 				{{#if user}}
-				<h2>Welcome {{user.username}}</h2></br>
-				view sales report <a href="/graph">here</a>
+				<h1 class="notBlue">Welcome {{user.username}}</h1></br>
+				<a href="/graph"><h3>View Sales Report </h3></a>
 				{{else}}
-				<a href="register">register</a> or <a href="login">login</a> 
+				<a href="register">Register</a><h3>or</h3><a href="login">Login</a> 
 				{{/if}}  
 			</div>
 		</div>
@@ -69,7 +69,7 @@ Released under the MIT license: http://jsbin.mit-license.org
 									<a href="data"><div class="content-b">data</div></a>
 								</div>
 								<div class = "circle eight columns offset-by-seven alpha beta gamma" style="background-color:#ffffff">
-									<a href="input">Add Report</a>
+									<a href="input">add Report</a>
 								</div>
 							</div>
 							<div class=" eight columns alpha">	

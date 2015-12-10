@@ -1,6 +1,7 @@
 $primary-color: #00B7FF;
 $secondary-color: #ffffff;
 $default-padding : 10px;
+$gray : #A8A8A8;
 
 html, body {
     /* give this to all tags from html to .fullscreen */
@@ -13,7 +14,7 @@ body{
     margin:0;
     font-family:Damascus;
     line-height: normal;
-	color: #A8A8A8;
+	color: $gray;
     text-align:center;
 }
 form{
@@ -27,11 +28,16 @@ section {
 a {
 				color: $primary-color;
 				font-weight: normal;
+				text-decoration: underline;
+				font-size: 200%
 }
 
-a.notBlue{
-		color:#a8a8a8;
+.notBlue{
+		color: $gray;
+}
 
+.Blue{
+	color: $primary-color 	;
 }
 nav{
 	font-size: 75%;
@@ -46,11 +52,15 @@ h1{
 	font-size: 400%;
 }*/
 color: $secondary-color;
-font-size:200%;
+font-size:400%;
+}
+
+h2{
+	font-size:300%;
 }
 
 h3{
-	font-size: 3em;
+	font-size: 200%;
 }
 
 input{

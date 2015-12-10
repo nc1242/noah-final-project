@@ -23,10 +23,16 @@ section {
 a {
   color: #00B7FF;
   font-weight: normal;
+  text-decoration: underline;
+  font-size: 200%;
 }
 
 .notBlue {
-  color: #a8a8a8;
+  color: #A8A8A8;
+}
+
+.Blue {
+  color: #00B7FF;
 }
 
 nav {
@@ -42,11 +48,15 @@ h1 {
 	font-size: 400%;
 }*/
   color: #ffffff;
-  font-size: 200%;
+  font-size: 400%;
+}
+
+h2 {
+  font-size: 300%;
 }
 
 h3 {
-  font-size: 3em;
+  font-size: 200%;
 }
 
 input {
