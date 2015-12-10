@@ -23,8 +23,14 @@ router.get('/graph2', function(req, res) {
 });
 
 router.get('/input', function(req, res) {
-	res.render('input')
+  res.render('input')
 });
+
+/*
+router.get('/test', function(req, res) {
+  res.render('test')
+});
+*/
 
 
 router.post('/input', function(req, res) {

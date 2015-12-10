@@ -1,147 +1,90 @@
-<div id="graph" class="fullscreen background parallax">
-	<script src="/javascripts/d3.min.js"></script>
-	<script>
+<head>
+    <title>Graph Report</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/dc.css"/>
+</head>
+<body>
 
-/*	var w = window,
-    d = document,
-    e = d.documentElement,
-    g = d.getElementsByTagName('body')[0],
-    x = w.innerWidth || e.clientWidth || g.clientWidth,
+<div id="test" class="fullscreen background parallax"></div>
+
+<script type="text/javascript" src="../js/d3.js"></script>
+<script type="text/javascript" src="../js/crossfilter.js"></script>
+<script type="text/javascript" src="../js/dc.js"></script>
+<script type="text/javascript">
+var margin = {top: 100, right: 100, bottom: 50, left: 100}
+  , w = window
+  , width = w.innerWidth
+  , height = w.innerHeight
+  , width = width - margin.left - margin.right;
+
+var parseDate = d3.time.format("%d-%b-%y").parse;
+
+
+
+var chart = dc.lineChart("#test");
+
+//d3.csv("morley.csv", function(error, data) {
+d3.json("/data2", function(error, data) {
+
+
+  data.forEach(function(d) {
+    d.close = +d.close;
+    d.date = parseDate(d.date);
+  });
+
+
+  var ndx                 = crossfilter(data),
+      dateDimension        = ndx.dimension(function(d) {return d.date;}),
+      closeSumGroup       = dateDimension.group().reduceSum(function(d) {return d.close;});
+
+  var minDate = dateDimension.bottom(1)[0].date;
+  var maxDate = dateDimension.top(1)[0].date;
+
+  console.log(minDate);
+  console.log(maxDate);
+
+  chart
+    .width(width)
+    .height(height)
+    .transitionDuration(1000)
+    .yAxisLabel("Close Amount")
+    .xAxisLabel("Date")
+    .brushOn(false)
+    .dimension(dateDimension) //your dimension created from crossfilter
+    .group(closeSumGroup) // your group
+    .elasticY(true)
+    .renderHorizontalGridLines(true)
+    .renderVerticalGridLines(true)
+    .x(d3.time.scale().domain([minDate, maxDate])) //these are the dates we created before this step so that the scale fits according to our data
+    .yAxis().tickFormat(d3.format("s"));
+  
+  chart.xAxis().tickFormat(d3.time.format("%d-%b-%y"));
+
+  chart.render();
+
+});
+
+
+//d3.select('body').on('resize', resize); 
+window.onresize = updateWindow;
+
+function updateWindow(){
+    x = w.innerWidth || e.clientWidth || g.clientWidth;
+    x = x - margin.left - margin.right;
     y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-
-	function updateWindow(){
-	    x = w.innerWidth || e.clientWidth || g.clientWidth;
-	    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-	    console.log("width : ", x , "height : ", y);
-	    var svg = d3.select("#theGraph")
-	    console.log(svg.style("width"));
-	    svg.style("width", x);
-	    svg.style("height", y);
-
-	    //svg.attr("width", x).attr("height", y);
-	    //svg.style.width = x;
-	    //svg.style.height = y;
-	}
-	window.onresize = updateWindow;*/
-// scales and axes
-var x = d3.scale.linear()
-    .range([0, width])
-    .domain([0, .4]); // hard-coding this because I know the data
-
-var y = d3.scale.ordinal();
-
-
-	var margin = {top: 20, right: 20, bottom: 30, left: 50},
-	width = 1000 - margin.left - margin.right,
-	height = 500 - margin.top - margin.bottom;
-
-	var parseDate = d3.time.format("%d-%b-%y").parse;
-
-	var x = d3.time.scale()
-	.range([0, width]);
-
-	var y = d3.scale.linear()
-	.range([height, 0]);
-
-	var xAxis = d3.svg.axis()
-	.scale(x)
-	.ticks(10)
-	.orient("bottom");
-
-	var yAxis = d3.svg.axis()
-	    .scale(y)
-	    .ticks(10)
-	    .orient("right");
-
-	var line = d3.svg.line()
-	.x(function(d) { return x(d.date); })
-	.y(function(d) { return y(d.close); });
-
-
-
-	var svg = d3.select("#graph").append("svg")
-	svg.attr("width", width + margin.left + margin.right)
-	svg.attr("height", height + margin.top + margin.bottom)
-	//.attr("width", 80%)
-	//svg.attr("height", 100%)
-	svg.attr("id", 'chart')
-	.append("g")
-	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-
-
-	//d3.tsv("/data.tsv", function(error, data) {
-	d3.json("/data2", function(error, data) {
-		if (error) throw error;
-
-		data.forEach(function(d) {
-			d.date = parseDate(d.date);
-			d.close = +d.close;
-		});
-
-		x.domain(d3.extent(data, function(d) { return d.date; }));
-		y.domain([0, d3.max(data, function(d) { return d.close; })]);
-
-		svg.append("g")
-		.attr("class", "x axis")
-		.attr("transform", "translate(0," + height + ")")
-		.call(xAxis);
-
-		svg.append("g")
-		.attr("class", "y axis")
-	    .attr("transform", "translate(" + width + ",0)")
-		.call(yAxis)
-
-		svg.append("text")      // text label for the x axis
-		.attr("x", width / 2 )
-        .attr("y",  height + margin.bottom)
-        .style("text-anchor", "middle")
-        .text("Date");
-
-		svg.append("path")
-		.datum(data)
-		.attr("class", "line")
-		.attr("d", line);
-	});
-/*
-http://stackoverflow.com/questions/17622936/render-d3-graph-from-a-string-of-json-instead-of-a-json-file
-http://stackoverflow.com/questions/10549585/d3-js-json-simple-sample-code
-https://github.com/mbostock/d3/wiki/Selections#data
-http://alignedleft.com/tutorials/d3/binding-data/
-
-d3.select(window).on('resize', resize); 
-
-function resize() {
-    // update width
-    width = parseInt(d3.select('#chart').style('width'), 10);
-    width = width - margin.left - margin.right;
-
-    // resize the svg
-    x.range([0, width]);
-    d3.select(svg.node().parentNode)
-        .style('height', (y.rangeExtent()[1] + margin.top + margin.bottom) + 'px')
-        .style('width', (width + margin.left + margin.right) + 'px');
-
-    svg.selectAll('rect.background')
-        .attr('width', width);
-
-    svg.selectAll('rect.percent')
-        .attr('width', function(d) { return x(d.percent); });
-
-    // update median ticks
-    var median = d3.median(svg.selectAll('.bar').data(), 
-        function(d) { return d.percent; });
     
-    svg.selectAll('line.median')
-        .attr('x1', x(median))
-        .attr('x2', x(median));
-
-
-    // update axes
-    svg.select('.x.axis.top').call(xAxis.orient('top'));
-    svg.select('.x.axis.bottom').call(xAxis.orient('bottom'));
-
+    chart.width(x);
+    chart.height(y);
+    dc.renderAll();
+/*
+    console.log(x);
+    console.log(y);
+    console.log(d3.select("#test").selectAll('svg').attr("width"));
+    d3.select("#test").selectAll('svg').attr("width", x).attr("height", y);
+    */
 }
-*/
-	</script>
-</div>
+
+</script>
+
+</body>
+</html>
