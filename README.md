@@ -8,13 +8,12 @@ NOTE: On the homepage dont forget to scroll down. On the Graph page, hover over 
 
 ## Data Model
 
-I want to use mongoose.
+Mongoose
 
 
-First draft schema:
+Transaction Schema:
 
 ```javascript
-// mock schema
 var Transaction= new mongoose.Schema({
 	Date: String,
 	Close: Number,
